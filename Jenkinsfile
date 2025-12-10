@@ -58,7 +58,7 @@ pipeline {
                 echo "Deploying to Kubernetes..."
                 script {
                     // Update deployment YAML image
-                    sh "sed -i 's|image: calculator:latest|image: $ECR_PUBLIC_URI|g' $DEPLOYMENT_FILE"
+                   // sh "sed -i 's|image: calculator:latest|image: $ECR_PUBLIC_URI|g' $DEPLOYMENT_FILE"
                     
                     // Scale replicas to 3
                     sh "kubectl apply -f $DEPLOYMENT_FILE"
